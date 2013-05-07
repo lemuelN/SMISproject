@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<SCRIPT TYPE="text/javascript">
+
+function orderTotal(oform, prefix){
+var bayad = oform[prefix + "_bayad"];
+var stbal = oform[prefix + "_stbal"];
+var amount = oform[prefix + "_amount"];
+var stVis = oform[prefix + "_stVis"];
+
+if (bayad == "")return;
+
+if (isNaN(bayad.value) || (bayad.value <= 0)) {
+   stbal.value = "0";
+   }
+ // else if  (bayad.value > amount.value){
+  // stbal.value = "";
+ //}
+
+else
+   stbal.value = (Math.round(amount.value - bayad.value));
+visTotal(oform, prefix);
+}
+
+
+function visTotal(oform, prefix)
+{
+var stbal = oform[prefix + "_stbal"];
+var stVis = oform[prefix + "_stVis"];
+
+if (stVis.value != stbal.value)
+   stVis.value = stbal.value;
+}
+
+</SCRIPT>
+
+<FORM ACTION="../cgi-bin/mycgi.pl">
+<TABLE BORDER CELLPADDING=3>
+<!-- table titles -->
+<TR BGCOLOR="#99CCFF">
+   <TH>Assissment_Name</TD>
+   <TH>Bayad</TD>
+   <TH>Amount</TD>
+   <TH>Balance</TD>
+   </TR>
+
+<!--Entrance -->
+<TR BGCOLOR="#FFFFCC">
+   <TD>Entrace</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="vn_bayad" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'vn')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="vn_amount" id='entrance' ></TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN  NAME="vn_stbal" s>
+      <INPUT 
+         TYPE=TEXT 
+         DISABLED="YES"
+         NAME="vn_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'vn')" 
+         ></TD>
+   </TR>
+
+<!-- Books -->
+<TR BGCOLOR="#FFFFCC">
+   <TD>Books</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="ja_bayad" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'ja')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="ja_amount" id='books' ></TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="ja_stbal">
+      <INPUT 
+         TYPE=TEXT 
+          DISABLED="YES"
+         NAME="ja_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'ja')" 
+         ></TD>
+   </TR>
+
+<!-- BSP/GSP -->
+<TR BGCOLOR="#FFFFCC">
+   <TD>BSP/GSP</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="ph_bayad" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'ph')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="ph_amount" id='b_gsp' ></TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="ph_stbal">
+      <INPUT 
+         TYPE=TEXT 
+          DISABLED="YES"
+         NAME="ph_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'ph')" 
+         ></TD>
+   </TR>
+</TABLE>
+
+
+</FORM>
+
+</body>
+</html>

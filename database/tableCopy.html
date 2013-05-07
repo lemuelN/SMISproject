@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+<SCRIPT TYPE="text/javascript">
+/*<!-- 
+function orderTotal(oform, prefix)
+{
+// set references to fields
+var bayad = oform[prefix + "_bayad"];
+var stbal = oform[prefix + "_stbal"];
+var amount = oform[prefix + "_amount"];
+var stVis = oform[prefix + "_stVis"];
+
+// only bother if the field has contents
+if (bayad == "")return;
+
+// if the with is not a number (NaN) or is zero or less everything goes blank
+
+if (isNaN(bayad.value) || (bayad.value <= 0)) {
+   stbal.value = "0";
+   }
+ // else if  (bayad.value > amount.value){
+  // stbal.value = "";
+ //}
+// else the field is a valid number, so calculate the 
+// total order cost and put that value in the hidden subtotal field
+else
+   stbal.value = (Math.round(amount.value - bayad.value));
+// call the routine which checks if the visible subtotal is correct
+visTotal(oform, prefix);
+}
+
+// checks if the visible subtotal is correct
+// ie, if it equals the hidden subtotal field
+function visTotal(oform, prefix)
+{
+var stbal = oform[prefix + "_stbal"];
+var stVis = oform[prefix + "_stVis"];
+
+if (stVis.value != stbal.value)
+   stVis.value = stbal.value;
+}
+// -->*/
+</SCRIPT>
+
+<FORM ACTION="../cgi-bin/mycgi.pl">
+<TABLE BORDER CELLPADDING=1>
+<!-- table titles -->
+<TR BGCOLOR="#99CCFF">
+   
+   <TH>ENTRANCE</TD>
+   <TH>BOOKS</TD>
+   <TH>BSP/GSP</TD>
+   <TH>TOTAL</TD>
+   </TR>
+
+
+<TR BGCOLOR="#FFFFCC">
+   <TD><INPUT TYPE=TEXT NAME="pl_amount" VALUE="<? echo 'Php.'. $entrance; ?>" SIZE=10 DISABLED="YES"></TD>
+   <TD><INPUT TYPE=TEXT NAME="pl_amount" VALUE="<? echo 'Php.'. $books; ?>" SIZE=10 DISABLED="YES"></TD>
+    <TD><INPUT TYPE=TEXT NAME="pl_amount" VALUE="<? echo 'Php.'. $academic; ?>" SIZE=10 DISABLED="YES"></TD>
+    <TD><INPUT TYPE=TEXT NAME="pl_amount" VALUE="<? echo 'Php.'. $grandttl ; ?>" SIZE=10 DISABLED="YES"></TD>
+   </TR>
+   
+</TABLE>
+</FORM>
+
+</body>
+</html>

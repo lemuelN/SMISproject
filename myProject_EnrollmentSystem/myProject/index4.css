@@ -1,0 +1,38 @@
+#ako{
+	display: none;
+}
+#ikaw{
+	display: none;
+	background-color: green;
+}
+body{
+	background-color: gray;
+}
+#for{
+	background-color: #999966;
+}
+hr{
+	background: silver;
+	border: 2px;
+}
+#u{
+	border-color: blue;
+}
+.me{
+	background-color: #B28F47;
+}
+button{
+	background-color: #A6A6AA;
+}
+input{
+	background-color: #A3A375;
+}
+#new{
+   background-color: silver; 
+}
+p1{
+   color: red;
+}
+p2{
+   color: silver;
+}

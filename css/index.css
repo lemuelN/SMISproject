@@ -1,0 +1,29 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a, img, input,span,html,th,td{
+	padding: 0;
+	margin: 0;
+}
+body{
+	/*background: url(../background/bg.png);*/
+}
+#div_tabs{
+	width: 700px;
+	
+}
+#fst_for_fees{
+	position: relative;
+}
+#tbl_for_fees{
+	border: 1px solid silver;
+}
+#tbl_for_fees th{
+	font-size: 15px;
+}
+.input_payment{
+	width: 100px;
+}
+
+
